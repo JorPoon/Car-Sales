@@ -1,5 +1,9 @@
 //actiontypes
-import {ADD_FEATURES, REMOVE_FEATURES} from "../actions"
+import {ADD_FEATURES, 
+        REMOVE_FEATURES,
+        UPDATE_TOTAL_PRICE
+       } 
+        from "../actions"
 
 
 const initialState = {
@@ -65,6 +69,11 @@ const initialState = {
 
               }
 
+          }
+          case UPDATE_TOTAL_PRICE: {
+              return {
+                  ...state
+              }
           }
           default:
               return state;
