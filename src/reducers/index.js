@@ -71,8 +71,17 @@ const initialState = {
 
           }
           case UPDATE_TOTAL_PRICE: {
+              const feat = state.additionalFeatures.filter(item => {
+                  if(item.id === action.payload) {
+                      return item.price
+                  }
+              })
               return {
-                  ...state
+                  ...state,
+                  car: {
+                      ...state.car,
+                     price: state.car.price + feat
+                  }
               }
           }
           default:
