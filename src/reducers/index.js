@@ -1,5 +1,9 @@
 //actiontypes
-import {ADD_FEATURES, REMOVE_FEATURES} from "../actions"
+import {ADD_FEATURES, 
+        REMOVE_FEATURES,
+        UPDATE_TOTAL_PRICE
+       } 
+        from "../actions"
 
 
 const initialState = {
@@ -65,6 +69,20 @@ const initialState = {
 
               }
 
+          }
+          case UPDATE_TOTAL_PRICE: {
+              const feat = state.additionalFeatures.filter(item => {
+                  if(item.id === action.payload) {
+                      return item.price
+                  }
+              })
+              return {
+                  ...state,
+                  car: {
+                      ...state.car,
+                     price: state.car.price + feat
+                  }
+              }
           }
           default:
               return state;
