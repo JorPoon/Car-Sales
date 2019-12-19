@@ -7,7 +7,7 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 //actioncreator
-import {addFeatures, removeFeatures} from "./actions"
+import {addFeatures, removeFeatures, updatePrice} from "./actions"
 
 const App = (props) => {
 
@@ -43,4 +43,4 @@ const mapStateToProps = state => ({
     additionalPrice: state.additionalPrice
   
 })
-export default connect(mapStateToProps, {addFeatures, removeFeatures})(App);
+export default connect(mapStateToProps, {addFeatures, removeFeatures, updatePrice})(App);
